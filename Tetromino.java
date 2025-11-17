@@ -13,7 +13,7 @@ public class Tetromino extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    boolean[][] boardOccupied = new boolean[100][200];
+    boolean[][] boardOccupied = new boolean[13][23];
     
     public Tetromino() {
         GreenfootImage image = getImage();
@@ -24,7 +24,7 @@ public class Tetromino extends Actor
         // Set the scaled image back to the actor
         setImage(image);
         
-        int type = ((int) Math.random() * 3) + 1;
+        int type = ((int) Math.random() * 7) + 1;
         
         /*if (type == 1) {
             
@@ -34,14 +34,32 @@ public class Tetromino extends Actor
     public void act()
     {   
         int x = getX(), y = getY();
+        int speed = 0;
         
-        move(1);
+        boardOccupied[x][y] = false;
+        
         if (Greenfoot.isKeyDown("a")) {
-            setLocation(x - 1, y + 1);
+            if (x > 0 && !boardOccupied[x - 1][y + 1]) {
+                setLocation(x - 1, y);
+            }
         }
         else if (Greenfoot.isKeyDown("d")) {
-            setLocation(x + 1, y + 1);
-        }        
-        Greenfoot.delay(5);
+            if (!boardOccupied[x + 1][y + 1]) {
+                setLocation(x + 1, y);
+            }
+        }
+        else if (Greenfoot.isKeyDown("s")) {
+            setLocation(x, y + 1);
+        }
+        
+        move(1);
+        boardOccupied[x][y] = true;
+        
+        Greenfoot.delay(8 - speed);
+        
+        if (y == 21) {
+            setLocation(5, 0);
+            Greenfoot.delay(8 - speed);
+        }
     }
 }
