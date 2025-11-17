@@ -22,7 +22,7 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 40x40 pixels
-        super(10, 20, 40);
+        super(12, 22, 40);
         prepare();
 
         // Set a gray background (WIP)
@@ -47,8 +47,12 @@ public class MyWorld extends World
     
     private void prepare() {
         Tetromino mino = new Tetromino();
-        addObject(mino, 5, 0);
-        mino.setLocation(5, 0);
+        addObject(mino, 6, 0);
+        mino.setLocation(6, 0);
         mino.turn(90);
+        
+        if (mino.getY() == 23) {
+            removeObject(mino);
+        }
     }
 }
