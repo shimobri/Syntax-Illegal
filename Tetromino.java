@@ -43,13 +43,17 @@ public class Tetromino extends Actor
                 setLocation(x - 1, y);
             }
         }
-        else if (Greenfoot.isKeyDown("d")) {
-            if (!boardOccupied[x + 1][y + 1]) {
+        if (Greenfoot.isKeyDown("d")) {
+            if (x<13 && !boardOccupied[x + 1][y + 1]) {
                 setLocation(x + 1, y);
             }
         }
-        else if (Greenfoot.isKeyDown("s")) {
-            setLocation(x, y + 1);
+        if (Greenfoot.isKeyDown("s")) {
+            if (y+5 >= 21) {
+                setLocation(x, 21);
+            } else {
+                setLocation(x, y + 5);
+            }
         }
         
         move(1);
