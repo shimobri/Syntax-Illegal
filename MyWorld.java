@@ -26,13 +26,13 @@ public class MyWorld extends World
         prepare();
 
         // Set a gray background (WIP)
-        /* GreenfootImage cell = new GreenfootImage(1, 1);
-        cell.setColor(Color.DARK_GRAY);
+        GreenfootImage cell = new GreenfootImage(1, 1);
+        cell.setColor(Color.LIGHT_GRAY); 
         cell.fill();
-        setBackground(cell); */
+        setBackground(cell);
         
-        GreenfootImage cell = getBackground();
-        cell.setColor(Color.WHITE); // Set color for grid lines
+        //GreenfootImage cell = getBackground();
+        //cell.setColor(Color.WHITE); // Set color for grid lines
 
         // Draw horizontal lines
         for (int y = 1; y < getHeight(); y++) {
