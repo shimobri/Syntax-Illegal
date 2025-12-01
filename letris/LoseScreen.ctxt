@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=LoseScreen
+comment0.text=\r\n\ This\ world\ class\ is\ the\ screen\ that\ the\ player\ sees\r\n\ when\ he/she\ loses.\r\n\ \r\n\ @author\ Tiger\ Zhao\r\n\ @version\ January\ 5,\ 2015\r\n
+comment1.params=score\ level\ linesCleared
+comment1.target=LoseScreen(int,\ int,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ LoseScreen.\r\n\ @param\ score\ the\ score\ that\ the\ user\ had\ when\ they\ lost\ the\ game\r\n\ @param\ level\ the\ current\ level\ of\ the\ user\ when\ they\ lost\ the\ game\r\n\ @param\ linesCleared\ the\ total\ number\ of\ lines\ cleared\ when\ they\ lost\ the\ game\r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ act\ method\ for\ the\ class\ LoseScreen\r\n\ This\ method\ is\ continuously\ run.\r\n
+numComments=3

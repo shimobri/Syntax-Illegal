@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Menu
+comment0.text=\r\n\ Main\ Menu\r\n\ \r\n\ @author\ Tiger\ Zhao\r\n\ @version\ January\ 5,\ 2015\r\n
+comment1.params=
+comment1.target=Menu()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Menu.\r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ act\ method\ for\ the\ class\ Menu\r\n\ This\ method\ is\ continuously\ run.\r\n
+comment3.params=
+comment3.target=void\ Animation()
+numComments=4
