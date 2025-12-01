@@ -37,21 +37,21 @@ public class Game extends World
      * If these delays were not here, a single press could register as 5 due to the speed at which the 
      * program runs.
      */
-    private int maxFallDelay =100;//delay to control moving down
-    private int curFallDelay =100;
+    private int maxFallDelay = 25;//delay to control moving down
+    private int curFallDelay = 25;
 
-    private int maxSlideDelay =7;//the delay to control moving left/right
-    private int curSlideDelay=7;
+    private int maxSlideDelay = 7;//the delay to control moving left/right
+    private int curSlideDelay = 7;
 
-    private int maxRotateDelay=10;//the delay to control the rotations
-    private int curRotateDelay=10;
+    private int maxRotateDelay = 10;//the delay to control the rotations
+    private int curRotateDelay = 10;
 
-    private int maxDropDelay=20; //delay to control the space bar
-    private int curDropDelay=20;
+    private int maxDropDelay = 20; //delay to control the space bar
+    private int curDropDelay = 20;
     
-    private boolean isPaused =false; //whether or not the game is currently paused
-    private int maxPauseDelay=20; //delay to control pausing
-    private int curPauseDelay =20;
+    private boolean isPaused = false; //whether or not the game is currently paused
+    private int maxPauseDelay = 20; //delay to control pausing
+    private int curPauseDelay = 20;
     //variables to store the buttons shown when the game is paused
     private Button exitButton;
     private Button restartButton;
@@ -117,7 +117,7 @@ public class Game extends World
                 addObject(restartButton, 185,375);
             }
         }
-        if(curPauseDelay >0){ //control the pause delay
+        if(curPauseDelay > 0){ //control the pause delay
             curPauseDelay--;
         }
     }
@@ -127,7 +127,7 @@ public class Game extends World
      */
     public void controlMovement(){
         //controls the falling movement of block
-        if(curFallDelay ==0){
+        if(curFallDelay == 0){
             curFallDelay = maxFallDelay;
             if (canMoveDown(y)){
                 y++;
@@ -140,18 +140,18 @@ public class Game extends World
         }
         
         //controls the left/right movement of block
-        if (curSlideDelay ==0){
+        if (curSlideDelay == 0){
             if(Greenfoot.isKeyDown("a") && canMoveLeft() ){
                 curSlideDelay=maxSlideDelay;
                 x--;
                 if(!canMoveDown(y)){
-                    curFallDelay=20;
+                    curFallDelay = 20;
                 }
             }else if (Greenfoot.isKeyDown("d") && canMoveRight()){
                 curSlideDelay=maxSlideDelay;
                 x++;
                 if(!canMoveDown(y)){ //make is so that the block can still move left/right even though it can't go down
-                    curFallDelay=20;
+                    curFallDelay = 20;
                 }
             }
         }else{
@@ -221,7 +221,7 @@ public class Game extends World
      * This method checks if the player has lost
      */
     public void checkLose(){
-        if(grid[1][4] !=null || grid[1][5]!=null || grid[1][6] !=null){
+        if(grid[1][4] != null || grid[1][5] != null || grid[1][6] != null) {
             //showText("GAMEOVER",185,200);
             addObject(new Text("GAMEOVER"),185,200);
             Greenfoot.delay(80);
@@ -542,14 +542,18 @@ public class Game extends World
         addObject(new Text("Level: " + level), 500, 100);
         
         //handle the leveling system
-        if(curLinesCleared >=10){
-            level ++;
-            curLinesCleared = 10 - curLinesCleared;
-            score+=level*100;
-            maxFallDelay-=3;
-            if (maxFallDelay<5){
-                maxFallDelay=5;
+        if(curLinesCleared >= 4){
+            level++;
+            curLinesCleared = 4 - curLinesCleared;
+            score += level * 100;
+            
+            maxFallDelay -= 3;
+            if (maxFallDelay < 3){
+                maxFallDelay=3;
             }
+            
+            curFallDelay -= 3;
+            if (curFallDelay < 3) curFallDelay = 3;
         }   
 
         getBackground().drawImage(new GreenfootImage("tile"+shiftBlockType+".png"),350,550); //displays the currently shifted block
@@ -654,5 +658,9 @@ public class Game extends World
         if(curBlockType.equals("I")){//special case of the long stick block
             y=0;
         }
+    }
+    
+    public void nextLevel() {
+        
     }
 }
