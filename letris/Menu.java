@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Menu extends World
 {
-    GifImage backgroundGif = new GifImage("teto.gif");
+    GifImage backgroundGif = new GifImage("LETRIS.gif");
     
     private Button startButton;
     private Button controlsButton;
@@ -21,7 +21,7 @@ public class Menu extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1200, 675, 1); 
             
-        GifImage teto = new GifImage("teto.gif");
+        GifImage teto = new GifImage("LETRIS.gif");
         setBackground(teto.getCurrentImage());
         
         GreenfootImage start = new GreenfootImage("startButton.png");
