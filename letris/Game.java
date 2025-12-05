@@ -64,7 +64,7 @@ public class Game extends World
     private int score=0;
     private int totalLinesCleared=0;
     private int curLinesCleared=0;
-    private int level=1;
+    private int level=Integer.parseInt(Greenfoot.ask("Please enter which level you wanted to start with (suggested 1):"));
     
     private ArrayList<Block[][]> nextBlocks = new ArrayList<Block[][]>(); //stores the future blocks
     private ArrayList<String> nextBlockTypes = new ArrayList<String>(); //stores the types of the furture blocks
@@ -223,8 +223,8 @@ public class Game extends World
     public void checkLose(){
         if(grid[1][4] != null || grid[1][5] != null || grid[1][6] != null) {
             //showText("GAMEOVER",185,200);
-            addObject(new Text("GAMEOVER"),185,200);
-            Greenfoot.delay(80);
+            addObject(new Text("GAME OVER"),185,200);
+            Greenfoot.delay(100);
             Greenfoot.setWorld(new LoseScreen(score,level,totalLinesCleared));
         }
     }
@@ -540,6 +540,7 @@ public class Game extends World
         addObject(new Text("Score: " + score), 500, 50);
         addObject(new Text("Lines: " + totalLinesCleared), 500, 75);
         addObject(new Text("Level: " + level), 500, 100);
+
         
         //handle the leveling system
         if(curLinesCleared >= 4){
