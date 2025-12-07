@@ -1,6 +1,6 @@
 # Tetris
 
-Tetris is a block stacker game. The object is to clear as many lines as possible while surviving the relentless increasing gravity.
+Tetris is a block stacker game. The object is to clear as many lines as possible while surviving the relentlessly increasing gravity.
 Note that this game uses custom keybinds. For more information, see below.
 
 Basic Controls:
