@@ -4,12 +4,12 @@ import java.util.*;
  * This world class is the class that represents the game level. Most the of game
  * logic is contained here.
  * 
- * @author 
- * @version 
+ * @author Tiger Zhao
+ * @version January 5, 2015
  */
 public class Game extends World
 {
-    private static GreenfootSound backgroundMusic = new GreenfootSound("Tetoris.mp3"); //the background music
+    private static GreenfootSound backgroundMusic = new GreenfootSound("main.mp3"); //the background music
     private GreenfootImage gridImage = new GreenfootImage("grids.png");
     private Block[][] grid = new Block[20][10];
 
@@ -26,7 +26,8 @@ public class Game extends World
     private int[][] blockS = new int[][]{{1,1,0},
             {0,1,1}};
     private int[][] blockO = new int[][]{{1,1},
-            {1,1}};             
+            {1,1}}; 
+    private int[][] tileB = new int[][] {{1}};
             
     private Block[][] curBlock; //store the current block in terms of Block objects
     private String curBlockType =""; //stores the current block type
@@ -57,18 +58,18 @@ public class Game extends World
     private Button restartButton;
 
     private Block[][] shiftBlock; //stores the shifted block in terms of Block objects
-    private String shiftBlockType =""; //stores the type of the shifted block
-    private boolean shifted=false; //whether or not the player has used shift
+    private String shiftBlockType = ""; //stores the type of the shifted block
+    private boolean shifted = false; //whether or not the player has used shift
     
     //below are the variables to store the gameplay stats
-    private int score=0;
-    private int totalLinesCleared=0;
-    private int curLinesCleared=0;
-    private int level=Integer.parseInt(Greenfoot.ask("Please enter which level you wanted to start with (suggested 1):"));
+    private int score = 0;
+    private int totalLinesCleared = 0;
+    private int curLinesCleared = 0;
+    private int level = 0;
     
     private ArrayList<Block[][]> nextBlocks = new ArrayList<Block[][]>(); //stores the future blocks
     private ArrayList<String> nextBlockTypes = new ArrayList<String>(); //stores the types of the furture blocks
-    private int maxNext=5;//the max number of blocks that the user can see into the future
+    private int maxNext = 2;//the max number of blocks that the user can see into the future
     
     /**
      * Constructor for objects of class Map.
@@ -95,7 +96,7 @@ public class Game extends World
             drawShadow(); //draw the shadwos
             controlMovement(); //allow the player to input controls
         }else{
-            addObject(new Text("paused"), 185, 200);//show text
+            addObject(new Text("Paused"), 185, 200);//show text
             if(exitButton.isPressed()){ //if the exit button is pressed
                 Greenfoot.setWorld(new Menu()); //exit to menu
             }else if (restartButton.isPressed()){//if the restart button is pressed
@@ -435,6 +436,10 @@ public class Game extends World
                 }
             }
         }
+        if (curBlockType.equals("B")) {
+            explodeBomb();
+        }
+        
         clearLines();
     }
     
@@ -543,14 +548,16 @@ public class Game extends World
 
         
         //handle the leveling system
-        if(curLinesCleared >= 4){
-            level++;
-            curLinesCleared = 4 - curLinesCleared;
+        if(curLinesCleared >= 10 && level != 5){
+            level = Math.min(level + 1, 5);
+            curLinesCleared = 10 - curLinesCleared;
             score += level * 100;
             
-            maxFallDelay -= 3;
+            addObject(new LevelUpAnim(), 300, 200);
+            
+            maxFallDelay -= 8;
             if (maxFallDelay < 3){
-                maxFallDelay=3;
+                maxFallDelay = 3;
             }
             
             curFallDelay -= 3;
@@ -599,7 +606,7 @@ public class Game extends World
      */
     public void generateBlocks(){
         Random random = new Random();
-        int r = random.nextInt(7); //random number genration
+        int r = random.nextInt(8); //random number genration
         int[][] b; //variable to store the array representation of the block
         String t =""; //variable to store type
         if(r==0){//I
@@ -620,7 +627,30 @@ public class Game extends World
         }else if (r==5){//T
             b=blockT;
             t="T";
-        }else  {//O
+        }
+        else if (r == 6 && level >= 3) {
+            b = tileB;
+            t = "B";
+        } 
+        else if (r == 6 && level < 3) {
+            r = random.nextInt(6);
+            
+            if(r==0){
+                b=blockI; t="I";
+            }else if(r==1){
+                b=blockL; t="L";
+            }else if(r==2){
+                b=blockS; t="S";
+            }else if(r==3){
+                b=blockZ; t="Z";
+            }else if(r==4){
+                b=blockJ; t="J";
+            }else{ // r == 5
+                b=blockT; t="T";
+            }
+        }
+
+        else  {//O
             b=blockO;
             t="O";
         }
@@ -660,8 +690,20 @@ public class Game extends World
             y=0;
         }
     }
+    public void explodeBomb() {
+        int bombY = y;
+        int bombX = x;
     
-    public void nextLevel() {
-        
+        for (int dy = -1; dy <= 1; dy++) {
+            for (int dx = -1; dx <= 1; dx++) {
+                int ny = bombY - dy;
+                int nx = bombX + dx;
+    
+                // bounds check
+                if (ny >= 0 && ny < 20 && nx >= 0 && nx < 10) {
+                    grid[ny][nx] = null;
+                }
+            }
+        }
     }
 }

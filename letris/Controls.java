@@ -2,22 +2,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Display controls
  * 
- * @author 
- * @version 
+ * @author Tiger Zhao
+ * @version January 5, 2015
  */
 public class Controls extends World
 {
-    GifImage backgroundGif = new GifImage("chika.gif");
+    GifImage backgroundGif = new GifImage("controls.gif");
     private Button backButton;
     
     /**
      * Constructor for objects of class Controls.
      */
     public Controls(){    
-        super(1160, 652, 1); 
-            
-        GifImage teto = new GifImage("chika.gif");
-        setBackground(teto.getCurrentImage());
+        super(1152, 620, 1); 
         
         showControls();
         backButton = new Button("backButton" ,new GreenfootImage("backButton.png"));

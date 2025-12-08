@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=LevelUpAnim
+comment0.text=\r\n\ A\ short\ popup\ for\ everytime\ the\ player\ levels\ up\r\n\ \r\n\ @author\ Ian\ Choi\r\n\ @version\ 12/6/2025\r\n
+comment1.params=
+comment1.target=LevelUpAnim()
+comment2.params=
+comment2.target=void\ act()
+numComments=3

@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * This class represents an individual block. Each tetris piece is made up of
  * multiple blocks.
  * 
- * @author Tiger Zhao
- * @version January 5, 2015
+ * @author Tiger Zhao, edited by Ian Choi
+ * @version 12/8/2025
  */
 public class Block extends Actor
 {
@@ -31,6 +31,9 @@ public class Block extends Actor
             image = new GreenfootImage("blockI.png");
         }else if(type.equals("T")){
             image = new GreenfootImage("blockT.png");
+        }
+        else if (type.equals("B")) {
+            image = new GreenfootImage("blockB.png");
         }
         setImage(image);//set the image
     }

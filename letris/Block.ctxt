@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Block
-comment0.text=\r\n\ This\ class\ represents\ an\ individual\ block.\ Each\ tetris\ piece\ is\ made\ up\ of\r\n\ multiple\ blocks.\r\n\ \r\n\ @author\ Tiger\ Zhao\r\n\ @version\ January\ 5,\ 2015\r\n
+comment0.text=\r\n\ This\ class\ represents\ an\ individual\ block.\ Each\ tetris\ piece\ is\ made\ up\ of\r\n\ multiple\ blocks.\r\n\ \r\n\ @author\ Tiger\ Zhao,\ edited\ by\ Ian\ Choi\r\n\ @version\ 12/8/2025\r\n
 comment1.params=type
 comment1.target=Block(java.lang.String)
 comment1.text=\r\n\ The\ constructor\ of\ the\ Block\ class\r\n\ @param\ type\ the\ type\ of\ the\ tetris\ piece\ that\ this\ block\ is\ a\ part\ of\r\n

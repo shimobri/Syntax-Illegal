@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Game
-comment0.text=\r\n\ This\ world\ class\ is\ the\ class\ that\ represents\ the\ game\ level.\ Most\ the\ of\ game\r\n\ logic\ is\ contained\ here.\r\n\ \r\n\ @author\ \r\n\ @version\ \r\n
+comment0.text=\r\n\ This\ world\ class\ is\ the\ class\ that\ represents\ the\ game\ level.\ Most\ the\ of\ game\r\n\ logic\ is\ contained\ here.\r\n\ \r\n\ @author\ Tiger\ Zhao\r\n\ @version\ January\ 5,\ 2015\r\n
 comment1.params=
 comment1.target=Game()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Map.\r\n
@@ -32,7 +32,7 @@ comment18.params=
 comment18.target=void\ getNextBlock()
 comment18.text=\r\n\ This\ method\ gets\ the\ next\ block\ in\ line\ and\ keeps\ a\ constant\ number\ of\ blocks\ coming\ up.\r\n
 comment19.params=
-comment19.target=void\ nextLevel()
+comment19.target=void\ explodeBomb()
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\r\n\ act\ method\ for\ the\ class\ Game\r\n\ This\ method\ is\ continuously\ run.\r\n

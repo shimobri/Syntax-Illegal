@@ -13,26 +13,26 @@ public class Menu extends World
     private Button startButton;
     private Button controlsButton;
     
+    private static GreenfootSound introMusic = new GreenfootSound("koro.mp3");
+    
     /**
      * Constructor for objects of class Menu.
      */
     public Menu()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1200, 675, 1); 
-            
-        GifImage teto = new GifImage("LETRIS.gif");
-        setBackground(teto.getCurrentImage());
+        super(1152, 620, 1); 
         
         GreenfootImage start = new GreenfootImage("startButton.png");
+        start.scale(450, 410);
         startButton = new Button("startButton", start);
         
-        GreenfootImage controller = new GreenfootImage("controls.png");
-        controller.scale(300, 200);
+        GreenfootImage controller = new GreenfootImage("controller.png");
+        controller.scale(250, 180);
         controlsButton = new Button("controlsButton", controller);
         
-        addObject(startButton, 200, 480);
-        addObject(controlsButton, 1000, 480);
+        addObject(startButton, 265, 250);
+        addObject(controlsButton, 265, 420);
     }
     
     /**
@@ -41,8 +41,11 @@ public class Menu extends World
      */
     public void act(){
         Animation();
+        introMusic.playLoop();
+
         if(startButton.isPressed()){ //if user presses the start button
             Greenfoot.setWorld(new Game()); //start the game
+            introMusic.stop();
         }else if (controlsButton.isPressed()){ // if the user presses the controls button
             Greenfoot.setWorld(new Controls()); //show the controls
         }
