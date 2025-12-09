@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=CutsceneActor
+comment0.text=\r\n\ Adds\ a\ cutscene\r\n\ \r\n\ @author\ Ian\ Choi\r\n\ @version\ 12/8/2025\r\n
+comment1.params=img
+comment1.target=CutsceneActor(greenfoot.GreenfootImage)
+numComments=2

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Button
+comment0.text=\r\n\ This\ class\ is\ used\ to\ represent\ a\ button\ that\ the\ user\ can\ press.\r\n\ \r\n\ @author\ Tiger\ Zhao\r\n\ @version\ January\ 5,\ 2015\r\n
+comment1.params=name\ image
+comment1.target=Button(java.lang.String,\ greenfoot.GreenfootImage)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Button.\r\n\ @param\ name\ the\ name\ of\ the\ button\r\n\ @param\ image\ the\ image\ to\ set\ the\ button\ as\r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ act\ method\ for\ the\ class\ Button\r\n\ This\ method\ is\ continuously\ run.\r\n
+comment3.params=
+comment3.target=boolean\ isPressed()
+comment3.text=\r\n\ @return\ whether\ or\ not\ the\ button\ has\ been\ pressed\r\n
+numComments=4

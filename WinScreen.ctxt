@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=WinScreen
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ WinScreen\ here.\r\n\ \r\n\ @author\ Ian\ Choi\r\n\ @version\ 12/8/2025\r\n
+comment1.params=score\ level\ linesCleared
+comment1.target=WinScreen(int,\ int,\ int)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ act\ method\ for\ the\ class\ LoseScreen\r\n\ This\ method\ is\ continuously\ run.\r\n
+comment3.params=
+comment3.target=void\ Animation()
+numComments=4

@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.target=Shadow
+comment0.text=\r\n\ This\ class\ represents\ the\ shadow\ that\ the\ player\ sees\ during\ gameplay.\r\n\ The\ shadow\ is\ the\ tinted\ blocks\ at\ the\ bottom\ to\ show\ where\ the\ block\ will\ land.\r\n\ \r\n\ @author\ Tiger\ Zhao\r\n\ @version\ January\ 5,\ 2015\r\n
+numComments=1
