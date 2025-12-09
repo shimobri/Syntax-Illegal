@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Text
+comment0.text=\r\n\ Use\ to\ display\ text\r\n\ \r\n\ @author\ Tiger\ Zhao\r\n\ @version\ January\ 5,\ 2015\r\n
+comment1.params=text
+comment1.target=Text(java.lang.String)
+comment1.text=\r\n\ A\ constructor\ for\ the\ Text\ class\r\n\ @param\ text\ the\ text\ to\ be\ displayed\r\n
+comment2.params=text\ size
+comment2.target=Text(java.lang.String,\ int)
+comment2.text=\r\n\ Another\ constructor\ for\ the\ Text\ class\r\n\ @param\ text\ the\ text\ to\ be\ displayed\r\n\ @param\ size\ the\ font\ size\ to\ be\ used\r\n
+numComments=3
